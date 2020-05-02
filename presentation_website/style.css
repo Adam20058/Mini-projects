@@ -1,0 +1,133 @@
+/* 
+I setted the variables
+1 - color for each page
+2 - animation speed
+*/
+
+:root {
+  --page-1-color: steelblue;
+  --page-2-color: tan;
+  --page-3-color: teal;
+  --page-4-color: slateblue;
+
+  /* variable for speed of animation */
+  --animate-speed: 1s;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  /* hide the scroll bars */
+  overflow: hidden;
+}
+
+/* page colors */
+
+#page-1 {
+ background: var(--page-1-color);
+}
+#page-2 {
+ background: var(--page-2-color);
+}
+#page-3 {
+ background: var(--page-3-color);
+}
+#page-4 {
+ background: var(--page-4-color);
+}
+
+/* want the page itself to take up the whole view port */
+
+.page {
+  display: flex;
+  /* adjusted it back to being vertical */
+  flex-direction: column;
+  height: 100vh;
+  /* align horizontal to the center */
+  align-items: center;
+  /* align vertical to the center */
+  justify-content: center;
+  /* center the text */
+  text-align: center;
+  /* padding on the left and right so it's not up against the edge of page */
+  padding: 0 4rem;
+}
+
+/* heading size change */
+.page h1 {
+  font-size: 4rem;
+  line-height: 1.2;
+  margin: 1rem;
+}
+/* paragraph size */
+.page p {
+  font-size: 1.3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 2rem;
+  /* background color */
+  background: #f4f4f4;
+  /* text color */
+  color: #333;
+  /* get rid of link underline */
+  text-decoration: none;
+  border: none;
+  /* pushed buttone down a bit */
+  margin-top: 1rem;
+  /* font size in button */
+  font-size: 1.1rem;
+  /* hover feature */
+  transition: all 0.3s ease-in;
+}
+
+/* transition property makes background dark and text color white when i hover */
+.btn:hover, .btn-dark {
+  background: #333;
+  color: #fff;
+}
+
+/* transition for prev page btn */
+.btn-dark:hover {
+background: #f4f4f4;
+  color: #333;
+}
+
+/* Page Animations */
+
+/* page animation for page 1 header  */
+#page-1 h1{
+  /* moved header up off the page */
+  transform: translateY(-1200px);
+  /* animate */
+  animation: heading var(--animate-speed) forwards ease-in;
+}
+
+/* keyframe for the animation */
+
+@keyframes heading {
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* page animation for page 1 paragraph */
+
+#page-1 p {
+  transform: translateX(-2000px);
+  /* animation also added a delay at the end */
+  animation: text var(--animate-speed) forwards ease-in 2s;
+}
+
+/* keyframe for the animation for the text */
+@keyframes text {
+
+  to {
+    transform: translateX(0);
+  }
+}

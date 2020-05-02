@@ -20,7 +20,7 @@
       mollitia rerum accusamus excepturi eligendi quisquam porro. Excepturi harum magni vero id ducimus, impedit quae
       autem ea dolores reprehenderit cupiditate quibusdam odio. Laborum.</p>
     <div>
-      <a href="page-2" class="btn">
+      <a href="#page-2" class="btn">
         Next Page
         <!-- downward arrow icon  -->
         <i class="fas fa-arrow-circle-down"></i>
@@ -36,13 +36,13 @@
       mollitia rerum accusamus excepturi eligendi quisquam porro. Excepturi harum magni vero id ducimus, impedit quae
       autem ea dolores reprehenderit cupiditate quibusdam odio. Laborum.</p>
     <div>
-      <a href="page-1" class="btn btn-dark">
+      <a href="#page-1" class="btn btn-dark">
         Prev Page
         <!-- upward arrow icon  -->
         <i class="fas fa-arrow-circle-up"></i>
       </a>
 
-      <a href="page-3" class="btn">
+      <a href="#page-3" class="btn">
         Next Page
         <!-- downward arrow icon  -->
         <i class="fas fa-arrow-circle-down"></i>
@@ -59,13 +59,13 @@
       mollitia rerum accusamus excepturi eligendi quisquam porro. Excepturi harum magni vero id ducimus, impedit quae
       autem ea dolores reprehenderit cupiditate quibusdam odio. Laborum.</p>
     <div>
-      <a href="page-2" class="btn btn-dark">
+      <a href="#page-2" class="btn btn-dark">
         Prev Page
         <!-- upward arrow icon  -->
         <i class="fas fa-arrow-circle-up"></i>
       </a>
 
-      <a href="page-4" class="btn">
+      <a href="#page-4" class="btn">
         Next Page
         <!-- downward arrow icon  -->
         <i class="fas fa-arrow-circle-down"></i>
@@ -75,13 +75,13 @@
   </section>
   <!-- page 4 - intro -->
 
-  <section id="page-3" class="page">
+  <section id="page-4" class="page">
     <h1>Page 4</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet aut, dicta, qui quae neque eum at officia
       mollitia rerum accusamus excepturi eligendi quisquam porro. Excepturi harum magni vero id ducimus, impedit quae
       autem ea dolores reprehenderit cupiditate quibusdam odio. Laborum.</p>
     <div>
-      <a href="page-3" class="btn btn-dark">
+      <a href="#page-3" class="btn btn-dark">
         Prev Page
         <!-- upward arrow icon  -->
         <i class="fas fa-arrow-circle-up"></i>
@@ -89,6 +89,25 @@
 
     </div>
   </section>
+  <!-- scroll feauture -->
+  <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+    integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+  <script>
+    // Smooth scrolling
+    $('.btn').on('click', function (event) {
+      if (this.hash !== '') {
+        event.preventDefault();
+        const hash = this.hash;
+        $('html, body').animate(
+          {
+            scrollTop: $(hash).offset().top
+          },
+          1400
+        );
+      }
+    });
+  </script>
 </body>
 
 </html>
