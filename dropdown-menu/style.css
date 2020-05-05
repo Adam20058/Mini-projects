@@ -113,3 +113,18 @@ body {
   color: #fff;
   font-size: 4rem;
 }
+
+/* web responsiveness  */
+/* navbar doesn't fit smaller screens */
+@media(max-width: 600px) {
+  #navbar ul li {
+    /* so instead of display inline I'm getting the navbar stack up one on another for smaller screens */
+    display: block;
+  }
+
+  /* hover over nested items and stack up neatly for smaller screens */
+  #navbar ul li:hover ul {
+    width: 100%;
+    position: relative;
+  }
+}
