@@ -1,0 +1,115 @@
+:root {
+  --primary-color: coral;
+  --secondary-color: chocolate;
+}
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background: #f4f4f4;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#navbar ul {
+  /* no bullets */
+  list-style: none;
+}
+
+#navbar ul li {
+  color: #333;
+  /* t and b margin/padd respected and lets elements sit next to each other... on same axis */
+  display: inline-block;
+  /* add some height between each */
+  padding: 1rem;
+  /* in order to allow drop down to be positioned absolote */
+  position: relative; 
+}
+
+#navbar ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+/* hide the nested ul by default */
+/* ul inside the li */
+#navbar ul li ul {
+  display: none;
+}
+
+#navbar ul li:hover {
+  cursor: pointer;
+  background: var(--primary-color);
+  color:#fff;
+}
+
+#navbar ul li:hover a {
+  /* when you hover over links text is white */
+  color: #fff
+}
+
+/* Nested dropdown show */
+#navbar ul li:hover ul {
+  /* when i hover over hidden nested ul is shown */
+  display: block;
+  /* organize nested ul positioned underneath */
+  position: absolute;
+  left: 0;
+  width: 200px;
+  margin-top: 1rem;
+}
+
+/* targetted each list item */
+#navbar ul li:hover ul li {
+  /* adds color to hover background of nested item list */
+  display: block;
+  background: #e7e7e7;
+}
+
+#navbar ul li:hover ul li a {
+  /* adds color to text for hover nested links */
+  color: #333;
+}
+
+#navbar ul li:hover ul li:hover {
+  background: #e0e0e0;
+  color: inherit;
+}
+
+/* posts associated to nested links under blog tab  */
+#navbar ul li:hover ul li span {
+  float: right;
+  color: #fff;
+  background: var(--primary-color);
+  padding: 0.2rem 0.5rem;
+  text-align: center;
+  font-size: 0.8rem;
+  border-radius: 5px;
+}
+
+/* background of the post change as we hover over it */
+#navbar ul li:hover ul li:hover span {
+  background: var(--secondary-color);
+}
+
+/* Showcase */
+
+#showcase {
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  background: var(--primary-color);
+}
+
+#showcase h1 {
+  color: #fff;
+  font-size: 4rem;
+}
